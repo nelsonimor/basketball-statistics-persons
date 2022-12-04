@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>fr.basketball.statistics.persons</groupId>
+	<artifactId>basketball-statistics-persons</artifactId>
+	<version>${revision}</version>
+	<name>Basketball Statistics Persons</name>
+	<description>basketball-statistics-persons</description>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>basketball-statistics-persons-exposition</module>
+		<!--  <module>basketball-statistics-location-domain</module>-->
+		<!--<module>basketball-statistics-location-application</module>-->
+		<!--<module>basketball-statistics-location-infrastructure</module>-->
+		<!--<module>basketball-statistics-location-report</module>-->
+	</modules>
+
+	<properties>
+		<VERSION_NUMBER>0.0.3-SNAPSHOT</VERSION_NUMBER>
+		<revision>${VERSION_NUMBER}</revision>
+		<java.version>11</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring-boot.version>2.5.8</spring-boot.version>
+		<maven-compiler-plugin.version>3.6.2</maven-compiler-plugin.version>
+		<maven-jar-plugin.version>3.1.0</maven-jar-plugin.version>
+		<maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
+		<maven-eclipse-plugin.version>2.10</maven-eclipse-plugin.version>
+		<lombok.version>1.18.16</lombok.version>
+		<pact.version>4.3.5</pact.version>
+		<mapstruct.version>1.3.1.Final</mapstruct.version>
+		<lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
+		<junit.utReportFolder>${project.testresult.directory}/surefire-reports</junit.utReportFolder>
+		<junit.itReportFolder>${project.testresult.directory}/failsafe-reports</junit.itReportFolder>
+		<jacoco-maven-plugin.version>0.8.6</jacoco-maven-plugin.version>
+		<jacoco.utReportFolder>${project.build.directory}/jacoco/test</jacoco.utReportFolder>
+		<jacoco.utReportFile>${jacoco.utReportFolder}/jacoco.exec</jacoco.utReportFile>
+		<jacoco.itReportFolder>${project.build.directory}/jacoco/integrationTest</jacoco.itReportFolder>
+		<jacoco.itReportFile>${jacoco.itReportFolder}/jacoco.exec</jacoco.itReportFile>
+		<jacoco.reportFolder>target/site</jacoco.reportFolder>
+		<maven-failsafe-plugin.version>3.0.0-M5</maven-failsafe-plugin.version>
+		<maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
+		<project.testresult.directory>${project.build.directory}/test-reports</project.testresult.directory>
+		<zalando.version>0.27.0</zalando.version>
+		<io.cucumber.version>6.10.1</io.cucumber.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<version>${spring-boot.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.apache.logging.log4j</groupId>
+						<artifactId>log4j-to-slf4j</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-webflux</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>au.com.dius.pact.provider</groupId>
+				<artifactId>junit5spring</artifactId>
+				<version>${pact.version}</version>
+				<scope>test</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>io.grpc</groupId>
+						<artifactId>grpc-core</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<dependency>
+				<groupId>org.mapstruct</groupId>
+				<artifactId>mapstruct</artifactId>
+				<version>${mapstruct.version}</version>
+			</dependency>
+
+
+			<!-- Project dependencies -->
+			<!--  <dependency>
+				<groupId>fr.basketball.statistics.location</groupId>
+				<artifactId>basketball-statistics-location-domain</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>fr.basketball.statistics.location</groupId>
+				<artifactId>basketball-statistics-location-application</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>fr.basketball.statistics.location</groupId>
+				<artifactId>basketball-statistics-location-infrastructure</artifactId>
+				<version>${project.version}</version>
+				<scope>runtime</scope>
+			</dependency>-->
+
+			<dependency>
+				<groupId>fr.basketball.statistics.persons</groupId>
+				<artifactId>basketball-statistics-persons-exposition</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.zalando</groupId>
+				<artifactId>problem-spring-web-starter</artifactId>
+				<version>${zalando.version}</version>
+			</dependency>
+
+			<!-- Cucumber dependencies -->
+			<dependency>
+				<groupId>io.cucumber</groupId>
+				<artifactId>cucumber-java</artifactId>
+				<version>${io.cucumber.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.cucumber</groupId>
+				<artifactId>cucumber-junit</artifactId>
+				<version>${io.cucumber.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>io.cucumber</groupId>
+				<artifactId>cucumber-spring</artifactId>
+				<version>${io.cucumber.version}</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.logging.log4j</groupId>
+					<artifactId>log4j-to-slf4j</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<!-- JUnit 5 requires Surefire version 2.22.0 or higher -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>${maven-surefire-plugin.version}</version>
+					<configuration>
+						<!-- Force alphabetical order to have a reproducible build -->
+						<runOrder>alphabetical</runOrder>
+						<reportsDirectory>${junit.utReportFolder}</reportsDirectory>
+						<excludes>
+							<exclude>**/*IntTest*</exclude>
+						</excludes>
+						<systemPropertyVariables>
+							<pact.provider.version>${revision}</pact.provider.version>
+							<pactbroker.host>a01pacbro.cdweb.biz</pactbroker.host>
+						</systemPropertyVariables>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-failsafe-plugin</artifactId>
+					<version>${maven-failsafe-plugin.version}</version>
+					<configuration>
+						<!-- Due to spring-boot repackage, without adding this property test 
+							classes are not found See https://github.com/spring-projects/spring-boot/issues/6254 -->
+						<classesDirectory>${project.build.outputDirectory}</classesDirectory>
+						<!-- Force alphabetical order to have a reproducible build -->
+						<runOrder>alphabetical</runOrder>
+						<reportsDirectory>${junit.itReportFolder}</reportsDirectory>
+						<includes>
+							<include>**/*IntTest*</include>
+						</includes>
+					</configuration>
+					<executions>
+						<execution>
+							<id>integration-test</id>
+							<goals>
+								<goal>integration-test</goal>
+								<goal>verify</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<version>${spring-boot.version}</version>
+					<configuration>
+						<!-- JAR must be then copied using maven-resources-plugin to the parent 
+							Project -->
+						<!-- With Maven 3.3.9, parent project is requested last so the JAR 
+							must be pulled by the parent project (in case of clean the JAR is removed 
+							if it is pushed by the exposition project -->
+						<finalName>${project.parent.artifactId}-${project.parent.version}</finalName>
+					</configuration>
+					<executions>
+						<execution>
+							<id>repackage</id>
+							<goals>
+								<goal>repackage</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven-compiler-plugin.version}</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>${maven-resources-plugin.version}</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>${jacoco-maven-plugin.version}</version>
+					<configuration>
+						<excludes>
+							<exclude>**/*Config*.*</exclude>
+							<exclude>**/*Properties*.*</exclude>
+						</excludes>
+					</configuration>
+					<executions>
+						<execution>
+							<id>prepare-agent-unit-tests</id>
+							<goals>
+								<goal>prepare-agent</goal>
+							</goals>
+							<configuration>
+								<destFile>${jacoco.utReportFile}</destFile>
+							</configuration>
+						</execution>
+						<execution>
+							<id>report-unit-test</id>
+							<phase>test</phase>
+							<goals>
+								<goal>report</goal>
+							</goals>
+							<configuration>
+								<dataFile>${jacoco.utReportFile}</dataFile>
+								<outputDirectory>${jacoco.utReportFolder}</outputDirectory>
+							</configuration>
+						</execution>
+						<execution>
+							<id>prepare-agent-integration-tests</id>
+							<goals>
+								<goal>prepare-agent-integration</goal>
+							</goals>
+							<configuration>
+								<destFile>${jacoco.itReportFile}</destFile>
+							</configuration>
+						</execution>
+						<execution>
+							<id>report-integration-tests</id>
+							<phase>post-integration-test</phase>
+							<goals>
+								<goal>report-integration</goal>
+							</goals>
+							<configuration>
+								<dataFile>${jacoco.itReportFile}</dataFile>
+								<outputDirectory>${jacoco.itReportFolder}</outputDirectory>
+							</configuration>
+						</execution>
+						<execution>
+							<id>report-aggregate</id>
+							<phase>test</phase>
+							<goals>
+								<goal>report-aggregate</goal>
+							</goals>
+							<configuration>
+								<outputDirectory>${jacoco.reportFolder}</outputDirectory>
+								<dataFileIncludes>
+									<dataFileInclude>**/jacoco.exec</dataFileInclude>
+								</dataFileIncludes>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+
+			</plugins>
+
+		</pluginManagement>
+
+		<plugins>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+
+	</build>
+
+	<profiles>
+		<profile>
+			<id>local</id>
+			<properties>
+				<!-- Default Spring profiles based on Maven profiles -->
+				<spring.profiles.active>local${profile.mock}</spring.profiles.active>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>dev</id>
+			<properties>
+				<!-- Default Spring profiles based on Maven profiles -->
+				<spring.profiles.active>dev</spring.profiles.active>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>rec</id>
+			<properties>
+				<!-- Default Spring profiles based on Maven profiles -->
+				<spring.profiles.active>rec</spring.profiles.active>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>prod</id>
+			<properties>
+				<!-- Default Spring profiles based on Maven profiles -->
+				<spring.profiles.active>prod</spring.profiles.active>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>mock</id>
+			<properties>
+				<profile.mock>,mock-geocoding</profile.mock>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>mock-geocoding</id>
+			<properties>
+				<profile.mock>,mock-geocoding</profile.mock>
+			</properties>
+		</profile>
+
+	</profiles>
+
+</project>
