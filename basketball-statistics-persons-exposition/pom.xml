@@ -44,17 +44,17 @@
 			<artifactId>mapstruct</artifactId>
 		</dependency>
 
-		<!--  <dependency>
-			<groupId>fr.basketball.statistics.location</groupId>
-			<artifactId>basketball-statistics-location-domain</artifactId>
+		<dependency>
+			<groupId>fr.basketball.statistics.persons</groupId>
+			<artifactId>basketball-statistics-persons-domain</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>fr.basketball.statistics.location</groupId>
-			<artifactId>basketball-statistics-location-application</artifactId>
+		 <dependency>
+			<groupId>fr.basketball.statistics.persons</groupId>
+			<artifactId>basketball-statistics-persons-application</artifactId>
 		</dependency>
 
-		<dependency>
+		<!-- <dependency>
 			<groupId>fr.basketball.statistics.location</groupId>
 			<artifactId>basketball-statistics-location-infrastructure</artifactId>
 			<scope>runtime</scope>

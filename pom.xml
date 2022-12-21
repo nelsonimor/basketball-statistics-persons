@@ -13,10 +13,9 @@
 
 	<modules>
 		<module>basketball-statistics-persons-exposition</module>
-		<!--  <module>basketball-statistics-location-domain</module>-->
-		<!--<module>basketball-statistics-location-application</module>-->
-		<!--<module>basketball-statistics-location-infrastructure</module>-->
-		<!--<module>basketball-statistics-location-report</module>-->
+		<module>basketball-statistics-persons-application</module>
+		<module>basketball-statistics-persons-domain</module>
+		<module>basketball-statistics-persons-infrastructure</module>
 	</modules>
 
 	<properties>
@@ -99,24 +98,24 @@
 
 
 			<!-- Project dependencies -->
-			<!--  <dependency>
-				<groupId>fr.basketball.statistics.location</groupId>
-				<artifactId>basketball-statistics-location-domain</artifactId>
+			<dependency>
+				<groupId>fr.basketball.statistics.persons</groupId>
+				<artifactId>basketball-statistics-persons-domain</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
 			<dependency>
-				<groupId>fr.basketball.statistics.location</groupId>
-				<artifactId>basketball-statistics-location-application</artifactId>
+				<groupId>fr.basketball.statistics.persons</groupId>
+				<artifactId>basketball-statistics-persons-application</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
 			<dependency>
-				<groupId>fr.basketball.statistics.location</groupId>
-				<artifactId>basketball-statistics-location-infrastructure</artifactId>
+				<groupId>fr.basketball.statistics.persons</groupId>
+				<artifactId>basketball-statistics-persons-infrastructure</artifactId>
 				<version>${project.version}</version>
 				<scope>runtime</scope>
-			</dependency>-->
+			</dependency>
 
 			<dependency>
 				<groupId>fr.basketball.statistics.persons</groupId>
