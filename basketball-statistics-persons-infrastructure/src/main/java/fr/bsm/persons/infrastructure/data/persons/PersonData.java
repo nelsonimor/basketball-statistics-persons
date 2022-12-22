@@ -32,15 +32,30 @@ public class PersonData extends CoreData {
 
 	private String profilpictureurl;
 	
+	private String hand;
+	
+	private String firstnationality;
+	
+	private String secondnationality;
+	
+	private String thirdnationality;
+	
+	private String birthplacecity;
+	
 	
 
 	@Builder
-	public PersonData(Integer id,Timestamp creationDate,Timestamp updateDate,String lastname,String firstname,Integer height,String profilpictureurl) {
+	public PersonData(Integer id,Timestamp creationDate,Timestamp updateDate,String lastname,String firstname,Integer height,String profilpictureurl,String hand,String firstnationality,String secondnationality,String thirdnationality,String birthplacecity) {
 		super(id,creationDate,updateDate);
 		this.lastname = lastname;
 		this.firstname = firstname;
 		this.height = height;
 		this.profilpictureurl = profilpictureurl;
+		this.hand = hand;
+		this.firstnationality = firstnationality;
+		this.secondnationality = secondnationality;
+		this.thirdnationality = thirdnationality;
+		this.birthplacecity = birthplacecity;
 	}
 
 }

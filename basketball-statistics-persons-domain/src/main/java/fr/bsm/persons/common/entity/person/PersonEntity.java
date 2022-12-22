@@ -34,6 +34,16 @@ public class PersonEntity {
 	private Integer height;
 
 	private String profilpictureurl;
+	
+	private String hand;
+	
+	private String firstnationality;
+	
+	private String secondnationality;
+	
+	private String thirdnationality;
+	
+	private String birthplacecity;
 
 
 
