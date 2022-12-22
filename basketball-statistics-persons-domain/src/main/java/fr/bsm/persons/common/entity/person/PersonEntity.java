@@ -33,7 +33,7 @@ public class PersonEntity {
 
 	private Integer height;
 
-	private String profilPictureUrl;
+	private String profilpictureurl;
 
 
 

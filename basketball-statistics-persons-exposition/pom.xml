@@ -49,16 +49,16 @@
 			<artifactId>basketball-statistics-persons-domain</artifactId>
 		</dependency>
 
-		 <dependency>
+		<dependency>
 			<groupId>fr.basketball.statistics.persons</groupId>
 			<artifactId>basketball-statistics-persons-application</artifactId>
 		</dependency>
 
-		<!-- <dependency>
-			<groupId>fr.basketball.statistics.location</groupId>
-			<artifactId>basketball-statistics-location-infrastructure</artifactId>
+		<dependency>
+			<groupId>fr.basketball.statistics.persons</groupId>
+			<artifactId>basketball-statistics-persons-infrastructure</artifactId>
 			<scope>runtime</scope>
-		</dependency>-->
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

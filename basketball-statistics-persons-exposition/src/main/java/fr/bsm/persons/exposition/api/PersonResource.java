@@ -5,8 +5,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.bsm.location.application.continent.ContinentService;
-import fr.bsm.location.exposition.util.ContinentDtoMapper;
 import fr.bsm.persons.application.persons.PersonService;
 import fr.bsm.persons.common.entity.person.PersonsEntity;
 import fr.bsm.persons.exposition.dto.PersonsDto;

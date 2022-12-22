@@ -9,7 +9,6 @@ import javax.validation.constraints.NotNull;
 import fr.bsm.persons.infrastructure.data.CoreData;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -31,17 +30,17 @@ public class PersonData extends CoreData {
 
 	private Integer height;
 
-	private String profilPictureUrl;
+	private String profilpictureurl;
 	
 	
 
 	@Builder
-	public PersonData(Integer id,Timestamp creationDate,Timestamp updateDate,String lastname,String firstname,Integer height,String profilPictureUrl) {
+	public PersonData(Integer id,Timestamp creationDate,Timestamp updateDate,String lastname,String firstname,Integer height,String profilpictureurl) {
 		super(id,creationDate,updateDate);
 		this.lastname = lastname;
 		this.firstname = firstname;
 		this.height = height;
-		this.profilPictureUrl = profilPictureUrl;
+		this.profilpictureurl = profilpictureurl;
 	}
 
 }

@@ -1,0 +1,30 @@
+package fr.bsm.persons.infrastructure.repository.persons;
+
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Repository;
+
+import fr.bsm.persons.common.entity.person.PersonsEntity;
+import fr.bsm.persons.domain.repository.PersonRepository;
+import fr.bsm.persons.infrastructure.util.PersonEntityMapper;
+
+@Repository
+public class PersonRepositoryImpl implements PersonRepository {
+	
+	private final PersonJpaRepository personJpaRepository;
+	
+	private final PersonEntityMapper personEntityMapper;
+
+	public PersonRepositoryImpl(PersonJpaRepository personJpaRepository,PersonEntityMapper personEntityMapper) {
+		this.personJpaRepository = personJpaRepository;
+		this.personEntityMapper = personEntityMapper;
+	}
+
+	@Override
+	public PersonsEntity findAll() {
+		return PersonsEntity.builder().items(personJpaRepository.findAll().stream().map(personEntityMapper::dataToEntity).collect(Collectors.toList())).build();
+	}
+
+
+
+}

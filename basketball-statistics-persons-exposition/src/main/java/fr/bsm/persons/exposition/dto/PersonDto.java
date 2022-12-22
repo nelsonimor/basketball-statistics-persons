@@ -15,6 +15,6 @@ public class PersonDto {
 	private String lastname;
 	private String firstname;
 	private Integer height;
-	private String profilPictureUrl;
+	private String profilpictureurl;
 
 }
