@@ -40,12 +40,12 @@ public class PersonData extends CoreData {
 	
 	private String thirdnationality;
 	
-	private String birthplacecity;
+	//private Integer birthplacecity;
 	
 	
 
 	@Builder
-	public PersonData(Integer id,Timestamp creationDate,Timestamp updateDate,String lastname,String firstname,Integer height,String profilpictureurl,String hand,String firstnationality,String secondnationality,String thirdnationality,String birthplacecity) {
+	public PersonData(Integer id,Timestamp creationDate,Timestamp updateDate,String lastname,String firstname,Integer height,String profilpictureurl,String hand,String firstnationality,String secondnationality,String thirdnationality/*,Integer birthplacecity*/) {
 		super(id,creationDate,updateDate);
 		this.lastname = lastname;
 		this.firstname = firstname;
@@ -55,7 +55,7 @@ public class PersonData extends CoreData {
 		this.firstnationality = firstnationality;
 		this.secondnationality = secondnationality;
 		this.thirdnationality = thirdnationality;
-		this.birthplacecity = birthplacecity;
+		//this.birthplacecity = birthplacecity;
 	}
 
 }

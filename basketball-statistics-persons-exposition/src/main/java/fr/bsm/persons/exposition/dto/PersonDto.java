@@ -20,6 +20,6 @@ public class PersonDto {
 	private String firstnationality;
 	private String secondnationality;
 	private String thirdnationality;
-	private String birthplacecity;
+	private CityDto birthplacecity;
 
 }

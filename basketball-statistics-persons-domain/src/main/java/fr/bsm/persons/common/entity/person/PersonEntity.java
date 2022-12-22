@@ -2,6 +2,7 @@ package fr.bsm.persons.common.entity.person;
 
 import javax.validation.constraints.NotNull;
 
+import fr.bsm.persons.common.entity.location.CityEntity;
 import fr.bsm.persons.domain.ddd.DDD;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -43,7 +44,7 @@ public class PersonEntity {
 	
 	private String thirdnationality;
 	
-	private String birthplacecity;
+	private CityEntity birthplacecity;
 
 
 
