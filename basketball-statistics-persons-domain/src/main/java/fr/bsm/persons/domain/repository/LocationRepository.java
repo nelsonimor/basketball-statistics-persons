@@ -1,10 +1,12 @@
 package fr.bsm.persons.domain.repository;
 
+import java.util.Optional;
+
 import fr.bsm.persons.common.entity.location.CityEntity;
 
 public interface LocationRepository {
 	
-	CityEntity getCity(Integer idCity);
+	Optional<CityEntity> getCity(Integer idCity);
 	
 
 

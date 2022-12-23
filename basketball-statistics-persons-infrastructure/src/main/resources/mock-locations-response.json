@@ -1,0 +1,25 @@
+{
+   "id":23,
+   "name":"Malaga",
+   "longitude":-4.4216366,
+   "latitude":36.7213028,
+   "state":"Andalusia",
+   "county":"Málaga-Costa del Sol",
+   "country":{
+      "id":189,
+      "name":"Spain",
+      "fullname":"Kingdom of Spain",
+      "codeiso2":"ES",
+      "codeiso3":"ESP",
+      "number":"724",
+      "continent":{
+         "id":4,
+         "code":"EU",
+         "name":"Europe"
+      },
+      "region":{
+         "id":50,
+         "name":"Southern Europe"
+      }
+   }
+}

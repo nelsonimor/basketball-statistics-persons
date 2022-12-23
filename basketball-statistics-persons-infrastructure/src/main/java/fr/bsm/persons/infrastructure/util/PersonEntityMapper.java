@@ -9,7 +9,7 @@ import fr.bsm.persons.infrastructure.data.persons.PersonData;
 public interface PersonEntityMapper {
 
 
-  PersonEntity dataToEntity(PersonData continentData);
+  //PersonEntity dataToEntity(PersonData continentData);
 
-  PersonData entityToData(PersonEntity continentEntity);
+  //PersonData entityToData(PersonEntity continentEntity);
 }
