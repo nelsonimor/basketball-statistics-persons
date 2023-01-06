@@ -1,5 +1,7 @@
 package fr.bsm.persons.common.entity.person;
 
+import java.util.Optional;
+
 import javax.validation.constraints.NotNull;
 
 import fr.bsm.persons.common.entity.location.CityEntity;
@@ -18,7 +20,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PersonEntity {
 
-
+	
 	/**
 	 * Entity object Id
 	 */
@@ -45,6 +47,16 @@ public class PersonEntity {
 	private String thirdnationality;
 	
 	private CityEntity birthplacecity;
+	
+	public void completeBirthPlace(Optional<CityEntity> cityEntity) {
+		if(cityEntity.isPresent()) {
+			this.birthplacecity = cityEntity.get();
+		}
+		else {
+			this.birthplacecity = null;
+		}
+
+	}
 
 
 

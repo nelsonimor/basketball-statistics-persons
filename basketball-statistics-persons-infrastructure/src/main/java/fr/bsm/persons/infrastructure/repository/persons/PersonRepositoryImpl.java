@@ -25,11 +25,11 @@ public class PersonRepositoryImpl implements PersonRepository {
 
 	@Override
 	public PersonsEntity findAll() {
-		return PersonsEntity.builder().items(personJpaRepository.findAll().stream().map(x -> dataToEntity(x)).collect(Collectors.toList())).build();
+		return PersonsEntity.builder().items(personJpaRepository.findAll().stream().map(personEntityMapper::dataToEntity).collect(Collectors.toList())).build();
 	}
 	
 	
-	public PersonEntity dataToEntity(PersonData data) {
+	/*public PersonEntity dataToEntity(PersonData data) {
 		PersonEntity entity = new PersonEntity();
 		entity.setLastname(data.getLastname());
 		entity.setFirstname(data.getFirstname());
@@ -38,8 +38,7 @@ public class PersonRepositoryImpl implements PersonRepository {
 		cityEntity.setId(data.getBirthplacecity());
 		entity.setBirthplacecity(cityEntity);
 		return entity;
-	}
-
+	}*/
 
 
 }

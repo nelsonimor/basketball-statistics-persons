@@ -341,7 +341,8 @@
 			<id>local</id>
 			<properties>
 				<!-- Default Spring profiles based on Maven profiles -->
-				<spring.profiles.active>local${profile.mock}</spring.profiles.active>
+				<!--  <spring.profiles.active>local${profile.mock}</spring.profiles.active>-->
+				<spring.profiles.active>local</spring.profiles.active>
 			</properties>
 		</profile>
 

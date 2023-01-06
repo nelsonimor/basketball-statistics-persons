@@ -29,7 +29,7 @@ public class PersonServiceImpl implements PersonService {
 		
 		for (Iterator iterator = personsEntity.getItems().iterator(); iterator.hasNext();) {
 			PersonEntity personEntity = (PersonEntity) iterator.next();
-			personEntity.setBirthplacecity(locationRepository.getCity(personEntity.getBirthplacecity().getId()).get());
+			personEntity.completeBirthPlace(locationRepository.getCity(personEntity.getBirthplacecity().getId()));
 		}
 		
 		
